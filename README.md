@@ -5,17 +5,17 @@ Script programado en bash, para automatizar descarga de musicas o videos de la p
 
 *) _Script simple para automatizacion de descarga de musica y video de youtube._
 
-*) Agrega solo el link con sus opcion y descarga.
+*) _Agrega solo el link con sus opcion y descarga._
 
-*) Exporta el archivo a la memoria externa
+*) _Exporta el archivo a la memoria externa_
 
 # Comandos
 ```
 termux-setup-storage
 
-cd ~ && git clone https://github.com/RaulXH/Dyoutube-Music-and-video
+cd ~ && git clone https://github.com/RaulXH/DYoutube-YT
 
-cd Dyoutube-Music-and-video && chmod +x DownloadYT
+cd DYoutube-YT && chmod +x DownloadYT
 
 ./DownloadYT
 

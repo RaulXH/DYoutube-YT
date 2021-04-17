@@ -7,8 +7,9 @@ Script programado en bash, para automatizar descarga de musicas o videos de la p
 
 *) _Agrega solo el link con sus opcion y descarga._
 
-*) _Exporta el archivo a la memoria externa_
+*) _Exporta el archivo a la memoria interna_
 
+*) Los videos y musicas se descargan en la carpeta [ Music y Videos ] de la memoria interna
 # Comandos
 ```
 termux-setup-storage

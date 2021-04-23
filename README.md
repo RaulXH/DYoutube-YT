@@ -1,16 +1,16 @@
-# DYoutube-YT
-Script programado en bash, para automatizar descarga de musicas o videos de la plataforma de youtube, con solo el link de dicho video.
-#
-# Caracteristica
+#DYoutube-YT
+ Script programmed in bash, to automate downloading of music or videos from the youtube, instragram and Facebook platform, with only the link of said video.
+ #
+ # Characteristic
 
-*) _Script simple para automatizacion de descarga de musica y video de youtube._
+ *) _Simple script for youtube music and video download automation._
 
-*) _Agrega solo el link con sus opcion y descarga._
+ *) _Add only the link with your options and download._
 
-*) _Exporta el archivo a la memoria interna_
+ *) _Exports the file to internal memory_
 
-*) Los videos y musicas se descargan en la carpeta [ Music y Videos ] de la memoria interna
-# Comandos
+ *) Videos and music are downloaded to the [Music and Videos] folder of the internal memory.
+ # Commands
 ```
 termux-setup-storage
 
@@ -21,6 +21,9 @@ cd DYoutube-YT && chmod +x DownloadYT
 ./DownloadYT
 
 ```
+# Attention
+_*Create a fake account for facebook login in this script*_
+#
 # view
 
 ![Screenshot_20210416_164556_com termux](https://user-images.githubusercontent.com/77165035/115087302-8618ea80-9ed3-11eb-9453-abb3db3419a5.jpg)

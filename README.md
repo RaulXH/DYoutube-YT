@@ -25,11 +25,14 @@ cd DYoutube-YT && chmod +x DownloadYT
 # Attention
 _*Create a fake account for facebook login in this script*_
 #
-# view
-
-![Screenshot_20210416_164556_com termux](https://user-images.githubusercontent.com/77165035/115087302-8618ea80-9ed3-11eb-9453-abb3db3419a5.jpg)
+# VIEW
+![Screenshot_20210423_111950_com termux](https://user-images.githubusercontent.com/77165035/115901902-692a6d00-a427-11eb-999c-8f651ebf2173.jpg)
 #
-![Screenshot_20210416_164656_com termux](https://user-images.githubusercontent.com/77165035/115087321-8dd88f00-9ed3-11eb-9f5e-f52fd8646abe.jpg)
+![Screenshot_20210416_164656_com termux](https://user-images.githubusercontent.com/77165035/115902027-91b26700-a427-11eb-99c2-db7e123b13b8.jpg)
+#
+![Screenshot_20210423_112520_com termux](https://user-images.githubusercontent.com/77165035/115902087-a3940a00-a427-11eb-8dbe-6765c6c9e6ec.jpg)
+#
+![Screenshot_20210423_112912_com termux](https://user-images.githubusercontent.com/77165035/115902106-ab53ae80-a427-11eb-8cac-4440c9c13da0.jpg)
 #
 # Demostracion 
 #

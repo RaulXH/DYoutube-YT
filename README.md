@@ -1,6 +1,7 @@
 # DYoutube-YT
 #
-# Script programmed in bash, to automate downloading of music or videos from the youtube, instragram and Facebook platform, with only the link of said video.
+# issue 
+<p> Script programmed in bash, to automate downloading of music or videos from the youtube, instragram and Facebook platform, with only the link of said video. </P>
  #
 ![](https://badges.pufler.dev/visits/RaulXH/DYoutube-YT)
 

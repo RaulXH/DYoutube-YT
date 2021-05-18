@@ -43,4 +43,3 @@ _*Create a fake account for facebook login in this script*_
 #
 [![asciicast](https://asciinema.org/a/4lybQVYo5E9zqjF5IG1JH13YX.svg)](https://asciinema.org/a/4lybQVYo5E9zqjF5IG1JH13YX)
 # Raul XH
-![](https://komarev.com/ghpvc/?username=RaulXH)

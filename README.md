@@ -5,7 +5,7 @@
 <p> Script programmed in bash, to automate downloading of music or videos from the youtube, instragram and Facebook platform, with only the link of said video. </P>
 
 
-![](https://badges.pufler.dev/visits/RaulXH/DYoutube-YT) ![](https://img.shields.io/github/stars/RaulXH/DYoutube-YT) ![](https://img.shields.io/github/license/RaulXH/DYoutube-YT)
+![](https://badges.pufler.dev/visits/RaulXH/DYoutube-YT) ![](https://img.shields.io/github/stars/RaulXH/DYoutube-YT?style=for-the-badge&logo=appveyor) ![](https://img.shields.io/github/license/RaulXH/DYoutube-YT)
 
  # Characteristic
 

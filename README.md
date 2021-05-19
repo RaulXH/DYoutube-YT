@@ -9,11 +9,12 @@
 
  # Characteristic
 
- *) _Simple script for youtube music and video download automation._
+* _Automate commands, Youtube-dl tool_
+* _Simple script for youtube music and video download automation._
 
- *) _Add only the link with your options and download._
+* _Add only the link with your options and download._
 
- *) _Exports the file to internal memory_
+* _Exports the file to internal memory_
 
  *) Videos and music are downloaded to the [Music and Videos] folder of the internal memory.
  # Commands

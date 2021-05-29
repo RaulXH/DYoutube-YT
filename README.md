@@ -31,7 +31,11 @@ cd DYoutube-YT && chmod +x DownloadYT
 # Run from the $PATH
 ```
 cp ~/DYoutube-YT/DownloadYT $PREFIX/bin
-DownloadYT -m url
+
+chmod +x $PREFIX/bin/DownloadYT
+
+DownloadYT -m https:youtu.be/example/jsns
+
 ```
 # Attention
 _*Create a fake account for facebook login in this script*_

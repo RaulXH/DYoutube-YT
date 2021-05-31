@@ -39,7 +39,7 @@ DownloadYT -h
 _*Create a fake account for facebook login in this script*_
 #
 # VIEW
-![Screenshot_20210529_120609_com termux](https://user-images.githubusercontent.com/77165035/120078693-559da200-c076-11eb-982d-828487efac66.jpg)
+![Screenshot_20210530_234209_com termux](https://user-images.githubusercontent.com/77165035/120140764-d658bd00-c1a0-11eb-83e3-05cde5705f40.jpg)
 
 #
 ![Screenshot_20210416_164656_com termux](https://user-images.githubusercontent.com/77165035/115902027-91b26700-a427-11eb-99c2-db7e123b13b8.jpg)

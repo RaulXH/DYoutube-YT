@@ -30,11 +30,9 @@ cd DYoutube-YT && chmod +x DownloadYT
 ```
 # Run from the $PATH
 ```
-cp ~/DYoutube-YT/DownloadYT $PREFIX/bin
+(curl -fsSL  https://git.io/JG8ub -o DownloadYT) && chmod +x DownloadYT && mv DownloadYT $PREFIX/bin/
 
-chmod +x $PREFIX/bin/DownloadYT
-
-DownloadYT -m https:youtu.be/example/jsns
+DownloadYT -h
 
 ```
 # Attention

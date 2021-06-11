@@ -17,18 +17,8 @@
 * _Exports the file to internal memory_
 
  *) Videos and music are downloaded to the [Music and Videos] folder of the internal memory.
- # Commands
-```
-termux-setup-storage
 
-cd ~ && git clone https://github.com/RaulXH/DYoutube-YT
-
-cd DYoutube-YT && chmod +x DownloadYT
-
-./DownloadYT
-
-```
-# Run from the $PATH
+# Run from the $PATH ( commands )
 ```
 (curl -fsSL  https://git.io/JG8ub -o DownloadYT) && chmod +x DownloadYT && mv DownloadYT $PREFIX/bin/
 

@@ -1,0 +1,252 @@
+#!/data/data/com.termux/files/usr/bin/bash -e
+#
+# 
+#
+#	Programmed by RAUL XH 
+#
+#
+#
+#	SCRIPT ORIGINAL
+#
+#
+# 	[ 0% Copia de otros ]
+#
+#
+#	[ Creado el 05/04/2021 ] | [ RAULXH ]
+#
+#
+#
+#		SCRIPT ORIGINAL
+#
+#
+#background
+BG='\e[48;5;24m'
+RED='\e[48;5;1m'
+#
+#
+AGUA='\e[2;50;36m'
+YELOW='\e[0;50;33m'
+XRED='\e[2;50;91m'
+GREEN='\e[2;50;32m'
+WHITE='\e[2;50;37m'
+XBLUE='\e[7;47;94m'
+XYELOW='\e[7;50;33m'
+XWHITE='\e[7;47;31m'
+FORT='\e[0m'
+#
+# Salida ctrl_c
+#
+function ctrl_c()
+{
+	printf "\n${BG}|    Exiting    |${BG}${FORT}\n\n" 
+	sleep 0.3
+	exit 1
+}
+trap ctrl_c INT 
+#
+# Progress
+
+
+#
+#
+# Menu help
+#
+HELP()
+{
+	echo -e "
+${GREEN}Options:
+
+${AGUA}Youtube:${GREEN}
+
+ -m	${YELOW}[ ${WHITE} Music only  ${YELOW}]${FORT}${GREEN}
+
+ -v 	${YELOW}[ ${WHITE} videos only ${YELOW}]${FORT}${GREEN}
+
+ -a 	${YELOW}[  ${WHITE}  both     ${YELOW}]${FORT}${GREEN}
+
+${AGUA}Social accounts:${GREEN}
+
+--instagram, -i ${YELOW}[ ${WHITE} Download instagram videos ${YELOW}]${FORT}${GREEN}
+
+--facebook, -f  ${YELOW}[ ${WHITE} Download Facebook Videos ${YELOW}| ${WHITE}need credential ${YELOW}]${FORT}
+
+${AGUA}[*] ${YELOW}Example:
+
+${WHITE}./$(basename $0) -m ${WHITE}https://youtu.be/V1Pl8CzNzCw\n${FORT}
+${WHITE}./$(basename $0) --facebook ${WHITE}link_video\n${FORT}
+${XWHITE} In the case of Facebook, create a fake or second account.  Not personal ${FORT}\n"
+}
+BANNER()
+{
+printf "${YELOW}
+
+ _ \ /
+| \ Y  _ ${WHITE}xʜ${FORT}${YELOW} _|_   |_  _
+|_/ | (_)|_| |_|_||_)(/_
+${FORT}
+"
+}
+#
+# Creacion de directorios
+#
+[[ ! -d /sdcard/Music ]] && mkdir -p /sdcard/Music
+[[ ! -d /sdcard/Videos ]] && mkdir -p /sdcard/Videos
+#
+PACKAGE()
+{
+	echo -e "\n${GREEN}[] ${AGUA}Installing required packages ${GREEN}[]${FORT}\n"
+	pkg install ffmpeg rlwrap python -y 
+	[[ ! -f $PREFIX/bin/youtube-dl ]] && pip install youtube-dl &>/dev/null
+	sleep 0.1
+	clear
+	BANNER
+}
+[[ ! -f $PREFIX/bin/youtube-dl ]] || [[ ! -f $PREFIX/bin/ffmpeg ]] || [[ ! -f $PREFIX/bin/rlwrap ]] || [[ ! -f $PREFIX/bin/python ]] && PACKAGE && HELP && exit 0
+until [[ -n $1 ]] &&  [[ -n $2 ]]
+do
+	BANNER
+	HELP
+	exit 0
+done
+#
+#[[ ! $2 =~ ^https://youtu.be* ]] && echo -e "\n${XRED}[!] ${WHITE}Error de link ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
+#
+#
+# Download
+#
+#
+case $1 in
+\-m)
+	BANNER
+	[[ ! $2 =~ ^https://youtu.be* ]] && echo -e "\n${XRED}[!] ${WHITE}Error Link ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
+
+	echo -e "\n${YELOW}[✔] ${WHITE} Download music ${YELOW}[✔]${FORT}\n"
+#
+	echo -e "${GREEN}[%] Write the name or hit Enter\n"
+	REPLY=$(rlwrap -pgreen -S "[ Name ]--➤ " -o cat)
+	if [[ -z $REPLY ]]
+	then
+		echo -e "\n${AGUA}[*] ${WHITE}I do not specify anything ${AGUA}[*]${FORT}\n"
+		cd /sdcard/Music
+		youtube-dl --continue  --extract-audio  $2
+		echo -e "\n${RED}༐  ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇᴅ  ༐ ${FORT}\n"
+		exit 0
+
+	else
+		REPLY=$(echo $REPLY | tr ' ' '_' )
+		[[ -f /sdcard/Music/$REPLY.opus ]] && echo -e "\n${XRED}[*] ${WHITE} This file already exists: $REPLY ${XRED}[*]${FORT}\n" && exit 0
+
+		echo
+		youtube-dl --continue  --extract-audio  $2 -o /sdcard/Music/$REPLY.opus
+		echo -e "\n${RED}༐  ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇᴅ  ༐${FORT}\n"
+		exit 0
+	fi
+	;;
+\-v)
+	BANNER
+	[[ ! $2 =~ ^https://youtu.be* ]] && echo -e "\n${XRED}[!] ${WHITE}Error  link ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
+
+	#
+	echo -e "\n${YELOW}[✔] ${WHITE} Download video ${YELOW}[✔]${FORT}\n"
+#
+	#
+
+	echo -e "${GREEN}[%] Write the name or hit Enter\n"
+	REPLY=$(rlwrap -pgreen -S "[ Name ]--➤ " -o cat)
+
+	if [[ -z $REPLY ]]
+	then
+		echo -e "\n${AGUA}[*] ${WHITE}I do not specify anything ${AGUA}[*]${FORT}\n"
+	else
+		#
+		REPLY=$(echo $REPLY | tr ' ' '_' )
+		#
+		echo
+		youtube-dl --continue -f 22/18/17  $2 -o /sdcard/Videos/$REPLY.mp4
+		echo -e "\n${RED}༐  ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇᴅ  ༐${FORT}\n"
+		exit 0
+	fi
+	;;
+\-a)
+	BANNER
+	[[ ! $2 =~ ^https://youtu.be* ]] && echo -e "\n${XRED}[!] ${WHITE}Error link ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
+
+#
+	cd /sdcard/
+	echo -e "\n${YELOW}[✔] ${WHITE} Downloading  music and video ${YELOW}[✔]${FORT}\n"
+
+	echo
+#
+	youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' $2
+	echo -e "\n${RED}༐  ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇᴅ  ༐${FORT}${WHITE} Ruta: /sdcard/${FORT}\n"
+	exit 0
+	;;
+\-f | \--facebook)
+	cd /sdcard/Videos
+	BANNER
+	[[ ! $2 =~ ^https://www.facebook.com* ]] && echo -e "\n${XRED}[!] ${WHITE} Link error ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
+
+	printf "\n${XBLUE}  Dᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ Fᴀᴄᴇʙᴏᴏᴋ  ${FORT}\n\n"
+	#
+	# Verificacion de cuenta
+	#
+	until [[ -f ~/.netrc ]]
+	do
+		USERNAME=$(rlwrap -H $TMPDIR/.tmpuser -pblue -S "[ Id ]--➤ " -o cat)
+		[[ ! ${USERNAME} =~ ^[0-9]+$ ]] || [[ ${#USERNAME} -le 10 ]] && printf "\n${XRED}[✗] ${WHITE} incorrect ID ${XRED}[✗]${FORT}\n\n" && exit 0
+	 	PASSWORD=$(rlwrap -H $TMPDIR/.tmpPass -pblue -S "[ Password ]--➤ " -o cat)
+			#
+			# Export file netrc
+			#
+			cat << OF > ~/.netrc
+machine facebook  login $USERNAME  password $PASSWORD
+OF
+#
+done
+	#
+	#
+	youtube-dl --continue -n  $2
+	#
+	#
+	echo -e "\n${RED}༐  Download complete  ༐${FORT}\n"
+	exit 0
+	;;
+\-i | \--instagram)
+	BANNER
+	[[ ! $2 =~ ^https://www.instagram.com* ]] && echo -e "\n${XRED}[!] ${WHITE}Error link ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
+
+	printf "\n${XYELOW}  ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ɪɴsᴛᴀɢʀᴀᴍ  ${FORT}\n\n"
+	cd /sdcard/Videos
+	#
+	# Downloading video instagram
+	#
+	youtube-dl --continue $2
+	#
+	#
+	exit 0
+	echo -e "\n${RED}༐  Download complete  ༐${FORT}\n"
+	;;
+*)
+	echo -e "\n${XRED}[✗]${FORT} ${WHITE}Option error ${FORT}${XRED}[✗]${FORT}\n"
+	HELP
+	exit 0
+	;;
+esac
+#
+#
+#
+#
+#
+#
+#	SCRIPT ORIGINAL
+#
+#
+#	SCRIPT ORGINAL
+#
+#
+#
+#	SCRIPT ORGINAL
+#
+#
+#
+#	Aprende a programar. y deja de copiar

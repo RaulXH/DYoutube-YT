@@ -20,7 +20,7 @@
 
 # Run from the $PATH ( commands )
 ```
-(curl -fsSL  https://git.io/JG8ub -o DownloadYT) && chmod +x DownloadYT && mv DownloadYT $PREFIX/bin/
+(curl -fsSL  https://git.io/JG8ub -o DownloadYT) && chmod +x DownloadYT && rm -rf $PREFIX/bin/DownloadYT && mv DownloadYT $PREFIX/bin/
 
 DownloadYT -h
 

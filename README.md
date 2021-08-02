@@ -29,8 +29,6 @@ DownloadYT -h
 _*Create a fake account for facebook login in this script*_
 #
 # VIEW
-[![asciicast](https://asciinema.org/a/8UNRl2XXkXaaw05WXNUpajJlS.svg)](https://asciinema.org/a/8UNRl2XXkXaaw05WXNUpajJlS?t=30)
+[![asciicast](https://asciinema.org/a/8UNRl2XXkXaaw05WXNUpajJlS.svg)](https://asciinema.org/a/8UNRl2XXkXaaw05WXNUpajJlS?t=30:20)
 # Demostracion 
-#
-[![asciicast](https://asciinema.org/a/4lybQVYo5E9zqjF5IG1JH13YX.svg)](https://asciinema.org/a/4lybQVYo5E9zqjF5IG1JH13YX)
 # Raul XH

@@ -72,8 +72,8 @@ ${AGUA}Social accounts:${GREEN}
 
 ${AGUA}[*] ${YELOW}Example:
 
-${WHITE}./$(basename $0) -m ${WHITE}https://youtu.be/V1Pl8CzNzCw\n${FORT}
-${WHITE}./$(basename $0) --facebook ${WHITE}link_video\n${FORT}
+${WHITE}$(basename $0) -m ${WHITE}https://youtu.be/V1Pl8CzNzCw\n${FORT}
+${WHITE}$(basename $0) --facebook ${WHITE}link_video\n${FORT}
 ${XWHITE} In the case of Facebook, create a fake or second account.  Not personal ${FORT}\n"
 }
 BANNER()
@@ -181,7 +181,7 @@ case $1 in
 	echo -e "\n${RED}༐  ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴘʟᴇᴛᴇᴅ  ༐${FORT}${WHITE} Ruta: /sdcard/${FORT}\n"
 	exit 0
 	;;
-\-f | \--facebook)
+\-f|\--facebook)
 	cd /sdcard/Videos
 	BANNER
 	[[ ! $2 =~ ^https://www.facebook.com* ]] && echo -e "\n${XRED}[!] ${WHITE} Link error ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
@@ -211,7 +211,7 @@ done
 	echo -e "\n${RED}༐  Download complete  ༐${FORT}\n"
 	exit 0
 	;;
-\-i | \--instagram)
+\-i|\--instagram)
 	BANNER
 	[[ ! $2 =~ ^https://www.instagram.com* ]] && echo -e "\n${XRED}[!] ${WHITE}Error link ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
 

@@ -118,7 +118,7 @@ done
 case $1 in
 \-m)
 	BANNER
-	[[ ! $2 =~ ^https://youtu.be* ]] && echo -e "\n${XRED}[!] ${WHITE}Error Link ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
+	[[ ! $2 =~ ^https://youtu* ]] && echo -e "\n${XRED}[!] ${WHITE}Error Link ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
 
 	echo -e "\n${YELOW}[✔] ${WHITE} Download music ${YELOW}[✔]${FORT}\n"
 #
@@ -144,7 +144,7 @@ case $1 in
 	;;
 \-v)
 	BANNER
-	[[ ! $2 =~ ^https://youtu.be* ]] && echo -e "\n${XRED}[!] ${WHITE}Error  link ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
+	[[ ! $2 =~ ^https://youtu* ]] && echo -e "\n${XRED}[!] ${WHITE}Error  link ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
 
 	#
 	echo -e "\n${YELOW}[✔] ${WHITE} Download video ${YELOW}[✔]${FORT}\n"
@@ -169,7 +169,7 @@ case $1 in
 	;;
 \-a)
 	BANNER
-	[[ ! $2 =~ ^https://youtu.be* ]] && echo -e "\n${XRED}[!] ${WHITE}Error link ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
+	[[ ! $2 =~ ^https://youtu* ]] && echo -e "\n${XRED}[!] ${WHITE}Error link ${AGUA}[ ${WHITE}$2 ${AGUA}] ${XRED}[!]${FORT}\n" && exit 0
 
 #
 	cd /sdcard/
